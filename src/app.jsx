@@ -1,11 +1,21 @@
+import React, { Component } from 'react';
 import './app.css';
+import Navbar from './components/navbar';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>hello world</h1>
-    </div>
-  );
+class app extends Component {
+  state = {
+    mediaList: [],
+  };
+  render() {
+    return (
+      <div class="app-wrap">
+        <div class="app">
+          <Navbar />
+          <div></div>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default App;
+export default app;
