@@ -1,3 +1,7 @@
+# 이곳이 어디냐면 ... 💻
+
+리액트 공부를 위하여 유튜브 일부를 클론코딩하는 레포지토리입니다.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

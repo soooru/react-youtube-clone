@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import './app.css';
 import Navbar from './components/navbar';
+import MediaList from './components/mediaList';
 
 class app extends Component {
-  state = {
-    mediaList: [],
-  };
   render() {
     return (
-      <div class="app-wrap">
-        <div class="app">
+      <div className="app-wrap">
+        <div className="app">
           <Navbar />
-          <div></div>
+          <MediaList />
         </div>
       </div>
     );
