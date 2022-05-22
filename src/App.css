@@ -5,5 +5,15 @@
 .app {
   max-width: 1200px;
   margin: 0 auto;
-  background-color: beige;
+}
+.d-flex {
+  display: flex;
+  flex-grow: 0;
+}
+
+.media-list {
+  display: flex;
+  flex-grow: 0;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

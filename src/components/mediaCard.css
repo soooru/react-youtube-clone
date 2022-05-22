@@ -1,0 +1,19 @@
+.media-card {
+  width: calc(50% - 10px);
+  flex-grow: 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+.media-card img {
+  margin-right: 10px;
+}
+.media-card__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.media-card__title {
+  font-size: 1.2rem;
+}
