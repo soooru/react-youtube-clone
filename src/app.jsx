@@ -9,18 +9,18 @@ import MediaDetails from './layouts/mediaDetails';
 class app extends Component {
   render() {
     return (
-      <div className="app-wrap">
-        <div className="app">
-          <Navbar />
-          <BrowserRouter>
+      <BrowserRouter>
+        <div className="app-wrap">
+          <div className="app">
+            <Navbar />
             <Routes>
               <Route path="/" element={<MediaList />} />
               <Route path="/media/:id" element={<MediaDetails />} />
-              <Route path="/search" element={<MediaDetails />} />
+              <Route path="/search" element={<MediaList />} />
             </Routes>
-          </BrowserRouter>
+          </div>
         </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }

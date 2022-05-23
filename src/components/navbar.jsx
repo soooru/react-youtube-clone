@@ -1,30 +1,35 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './navbar.css';
 
-class Navbar extends PureComponent {
-  inputRef = React.createRef();
-  trySearch = () => {
-    const word = this.inputRef.current.value;
-    console.log('trySearch', word);
+function Navbar() {
+  let navigate = useNavigate();
+  const [searchWord, setSearchWord] = useState('');
+  const trySearch = () => {
+    navigate(`/search?word=${searchWord}`);
   };
-  render() {
-    return (
-      <nav className="navbar">
-        <h2 className="navbar-heading">youtube</h2>
-        <div className="navbar-search">
-          <input
-            ref={this.inputRef}
-            className="navbar-search__input"
-            type="text"
-            placeholder="search"
-          />
-          <button className="navbar-search__btn" onClick={this.trySearch}>
-            검색
-          </button>
-        </div>
-      </nav>
-    );
-  }
+  const goMain = () => {
+    navigate(`/`);
+  };
+  return (
+    <nav className="navbar">
+      <h2 className="navbar-heading" onClick={goMain}>
+        youtube
+      </h2>
+      <div className="navbar-search">
+        <input
+          className="navbar-search__input"
+          type="text"
+          placeholder="search"
+          onChange={(event) => setSearchWord(event.target.value)}
+        />
+        <button className="navbar-search__btn" onClick={trySearch}>
+          검색
+        </button>
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;

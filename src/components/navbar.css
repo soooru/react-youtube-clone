@@ -8,6 +8,10 @@
 .navbar-heading {
   margin-right: 20px;
 }
+.navbar-heading:hover {
+  cursor: pointer;
+  color: antiquewhite;
+}
 .navbar-search {
   display: flex;
   align-items: center;
