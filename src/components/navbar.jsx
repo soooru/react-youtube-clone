@@ -12,6 +12,11 @@ function Navbar() {
   const goMain = () => {
     navigate(`/`);
   };
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      trySearch();
+    }
+  };
   return (
     <nav className="navbar">
       <h2 className="navbar-heading" onClick={goMain}>
@@ -22,7 +27,8 @@ function Navbar() {
           className="navbar-search__input"
           type="text"
           placeholder="search"
-          onChange={(event) => setSearchWord(event.target.value)}
+          onChange={(e) => setSearchWord(e.target.value)}
+          onKeyPress={handleKeyPress}
         />
         <button className="navbar-search__btn" onClick={trySearch}>
           검색
