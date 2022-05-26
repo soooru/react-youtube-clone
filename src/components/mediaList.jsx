@@ -10,16 +10,16 @@ function MediaList() {
 
   let location = useLocation();
 
-  React.useEffect(() => {
-    if (location.pathname === '/') {
-      initMediaList();
-    } else {
+  useEffect(() => {
+    if (location.pathname === '/search') {
       const searchWord = location.search.split('=')[1];
       if (searchWord) {
         getSearchList(searchWord);
       } else {
         initMediaList();
       }
+    } else {
+      initMediaList();
     }
   }, [location]);
 
@@ -40,6 +40,7 @@ function MediaList() {
     ApiInstance.get('search', {
       params: {
         part: 'snippet',
+        type: 'video',
         maxResults: '24',
         q: word,
       },
@@ -56,9 +57,13 @@ function MediaList() {
   return (
     <div className="media-list">
       {mediaList.map((v) => (
-        <MeidaCard media={v} key={v.id.videoId ? v.id.videoId : v.id} />
+        <MeidaCard
+          media={v}
+          key={v.id.videoId ? v.id.videoId : v.id}
+          pathId={v.id.videoId ? v.id.videoId : v.id}
+        />
       ))}
-      {pageState ? <div>검색 결과가 없습니다</div> : null}
+      {pageState ? <div>검색 결과가 없거나 오류가 발생!</div> : null}
     </div>
   );
 }

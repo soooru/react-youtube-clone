@@ -17,3 +17,6 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+.detail-right .media-card {
+  width: 100%;
+}
