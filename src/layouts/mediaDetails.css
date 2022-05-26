@@ -1,6 +1,7 @@
 .detail-wrap {
   display: flex;
 }
+
 .detail-left {
   width: 70%;
 }
@@ -8,4 +9,14 @@
   width: 30%;
   max-height: calc(100vh - 80px);
   overflow: auto;
+}
+@media (max-width: 960px) {
+  .detail-wrap {
+    display: block;
+  }
+  .detail-left,
+  .detail-right {
+    width: 100%;
+    max-height: unset;
+  }
 }
